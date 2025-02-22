@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>And his name is John Cena</title>
+</head>
+<body onload="john()">
+<script>
+
+function john(){
+    var audio = new Audio('andhisnameisjohncena.mp3');
+    audio.play();
+    document.onkeydown = function(e){
+        e = e || window.event;
+        var key = e.which || e.keyCode;
+        if(key === 82){  // Key code for 'r'
+            rick();
+        }
+    }
+}
+
+function rick(){
+    // Set the background to the Rick Roll image
+    document.body.style.backgroundImage = "url('rick-roll.gif')";
+    document.body.style.backgroundSize = "100%";
+    document.body.style.backgroundRepeat = "repeat";
+    // Put the youtube vid there:
+    // Create an iframe element
+    var iframe = document.createElement('iframe');
+
+    // Set the attributes
+    iframe.width = "560";
+    iframe.height = "315";
+    iframe.src = "https://www.youtube.com/watch?v=Aq5WXmQQooo";
+    iframe.frameborder = "0";
+    iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+    iframe.allowFullscreen = true;
+
+    // Append the iframe to the body (or another element)
+    document.body.appendChild(iframe);
+    // Play the Rick Roll song
+    var audio = new Audio('rickroll.mp3');
+    audio.play();
+}
+
+</script>
+
+<button class="problem enclose">CLICK HERE TO PLAY EFFECT IF IT DIDN'T ALREADY BECAUSE YOU HAVE AUTOPLAY BLOCKING OR SMTHING LOL. <strong>ALSO DON'T PRESS R</strong></button>
+</body>
+<style>
+    body {
+        background-image: url('john-cena.gif');
+        background-repeat: repeat-y;
+        background-size: 100%;
+    }
+    button{
+        padding: 0.4%;
+        background-color: green;
+        border: none;
+        border-radius: 25px;
+        font-weight: 600;
+    }
+    .problem {text-align:center}
+    .enclose {position:fixed;bottom:0px;width:100%;}
+</style>
+</html>
